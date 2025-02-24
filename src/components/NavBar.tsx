@@ -1,10 +1,10 @@
-import { HStack } from "@chakra-ui/react";
-import React from "react";
-
+import { HStack, Text } from "@chakra-ui/react";
+import ColorModeSwitch from "./ColorModeSwitch";
 const NavBar = () => {
   return (
-    <HStack>
-      <text>DevFinder</text>
+    <HStack justifyContent="space-between" padding="10px">
+      <Text>DevFinder</Text>
+      <ColorModeSwitch />
     </HStack>
   );
 };
