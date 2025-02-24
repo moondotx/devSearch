@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import theme from "./theme.ts";
 import "./index.css";
+import "./SearchBar.css";
 import App from "./App.tsx";
 
 createRoot(document.getElementById("root")!).render(
