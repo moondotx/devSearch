@@ -1,24 +1,16 @@
-import { Grid, GridItem } from "@chakra-ui/react";
+import React from "react";
 import NavBar from "./components/NavBar";
-import SearchBar from "./components/SearchBar";
+import UserContainer from "./components/UserContainer";
 
-function App() {
+const App = () => {
   return (
-    <Grid
-      templateAreas={{
-        base: `"nav" "main "`,
-        lg: `"nav nav" " main"`,
-      }}
-    >
-      <GridItem area="nav">
+    <>
+      <div className="App" style={{ maxWidth: 680, margin: "0 auto" }}>
         <NavBar />
-      </GridItem>
-
-      <GridItem area="main">
-        <SearchBar />
-      </GridItem>
-    </Grid>
+        <UserContainer />
+      </div>
+    </>
   );
-}
+};
 
 export default App;
