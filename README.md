@@ -1,8 +1,7 @@
 # GitHub User Search Application
 
-GitHub User Search Application
 
-This React application allows users search for GitHub user profiles by username. It displays detailed user information including date ceated, bio, followers, and other profile details. The app supports light and dark themes for different user preference.
+This React application allows users search for GitHub user profiles by username. It displays detailed user information including date created, bio, followers, and other profile details. The app supports light and dark themes for different user preference.
 
 ## Installation
 
