@@ -1,11 +1,6 @@
-import { HStack, Text } from "@chakra-ui/react";
-import ColorModeSwitch from "./ColorModeSwitch";
 const NavBar = () => {
   return (
-    <HStack justifyContent="space-between" padding="10px" marginX={"auto"}>
-      <Text>DevFinder</Text>
-      <ColorModeSwitch />
-    </HStack>
+    <div className="dark:text-white text-[#2B3442] text-2xl">DevFinder</div>
   );
 };
 

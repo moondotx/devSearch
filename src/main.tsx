@@ -1,16 +1,27 @@
-import { StrictMode } from "react";
+import { StrictMode, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
-import theme from "./theme.ts";
 import "./index.css";
-import "./SearchBar.css";
 import App from "./App.tsx";
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <ChakraProvider theme={theme}>
-      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+const Root = () => {
+  const [theme] = useState(() => {
+    return localStorage.getItem("theme") || "light";
+  });
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  return (
+    <StrictMode>
       <App />
-    </ChakraProvider>
-  </StrictMode>
-);
+    </StrictMode>
+  );
+};
+
+createRoot(document.getElementById("root")!).render(<Root />);

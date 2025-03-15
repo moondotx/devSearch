@@ -1,28 +1,37 @@
-import {
-  Button,
-  HStack,
-  Text,
-  useColorMode,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import { LuMoon, LuSun } from "react-icons/lu";
 
 const ColorModeToggleButton = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const iconColor = useColorModeValue("gray.800", "white");
-  const textColor = useColorModeValue("gray.800", "white");
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
   return (
-    <HStack spacing={2}>
-      <Text color={textColor}>{colorMode === "light" ? "Dark" : "Light"}</Text>
-      <Button onClick={toggleColorMode} colorScheme="white" variant="">
-        {colorMode === "light" ? (
-          <LuMoon color={iconColor} />
+    <div className="flex items-center space-x-2">
+      <span className="text-gray-800 dark:text-white">
+        {darkMode ? "Light" : "Dark"}
+      </span>
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
+      >
+        {darkMode ? (
+          <LuSun className="text-white" />
         ) : (
-          <LuSun color={iconColor} />
+          <LuMoon className="text-gray-800" />
         )}
-      </Button>
-    </HStack>
+      </button>
+    </div>
   );
 };
 
