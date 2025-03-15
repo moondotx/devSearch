@@ -1,4 +1,4 @@
-# Header
+# GitHub User Search Application
 
 GitHub User Search Application
 
@@ -65,4 +65,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Connect with Me
 
 - GitHub: [moondotx](https://github.com/moondotx)
-- Twitter: [@yourhandle](https://x.com/hydrocharlex?s=21)
+- Twitter: [@HydroCharlex](https://x.com/hydrocharlex?s=21)
